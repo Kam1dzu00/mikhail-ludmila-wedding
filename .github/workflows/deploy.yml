@@ -26,8 +26,10 @@ jobs:
         with:
           version: 11.9.0
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run images:prepare
+      - run: pnpm run image:prepare
       - run: pnpm run build
+        env:
+          VITE_WEB3FORMS_ACCESS_KEY: ${{ secrets.VITE_WEB3FORMS_ACCESS_KEY }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

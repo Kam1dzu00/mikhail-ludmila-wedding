@@ -1,0 +1,506 @@
+:root {
+  --bg: #f7f2ea;
+  --paper: #fffaf2;
+  --paper-strong: #ffffff;
+  --text: #252a2b;
+  --muted: #6f6a63;
+  --line: rgba(37, 42, 43, 0.14);
+  --accent: #8f5b3f;
+  --accent-dark: #5f3b2c;
+  --soft-blue: #e6eef0;
+  --shadow: 0 22px 70px rgba(61, 48, 36, 0.12);
+  font-family: Manrope, Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(83, 106, 115, 0.12), transparent 28rem),
+    radial-gradient(circle at 88% 18%, rgba(143, 91, 63, 0.12), transparent 24rem),
+    linear-gradient(180deg, var(--bg), #f2eee7 58%, #ebe4d9);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.36;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(180deg, black, transparent 80%);
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+main {
+  width: min(100%, 1160px);
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.hero {
+  min-height: 100svh;
+  display: grid;
+  gap: 24px;
+  align-items: center;
+  padding: 24px 0 42px;
+}
+
+.heroText {
+  display: grid;
+  gap: 18px;
+  animation: rise 520ms ease both;
+}
+
+.names,
+.kicker {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.84rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  margin: 0;
+  color: var(--text);
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+h1 {
+  max-width: 780px;
+  font-size: clamp(3rem, 14vw, 7.8rem);
+  line-height: 0.9;
+}
+
+h1 span {
+  display: block;
+  color: var(--accent);
+}
+
+h2 {
+  font-size: clamp(2rem, 8vw, 4.4rem);
+  line-height: 0.98;
+}
+
+.heroText p:not(.names),
+.invite p,
+.formIntro {
+  max-width: 640px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.04rem, 3.4vw, 1.28rem);
+  line-height: 1.62;
+}
+
+.heroActions {
+  display: grid;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.primaryButton,
+.quietButton,
+.eventCard a {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 13px 18px;
+  border: 1px solid var(--line);
+  text-decoration: none;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.primaryButton {
+  border-color: var(--accent-dark);
+  background: var(--accent-dark);
+  color: white;
+  box-shadow: 0 14px 34px rgba(95, 59, 44, 0.22);
+}
+
+.quietButton,
+.eventCard a {
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.primaryButton:hover,
+.quietButton:hover,
+.eventCard a:hover {
+  transform: translateY(-2px);
+}
+
+.photoCard {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  animation: rise 680ms ease 80ms both;
+}
+
+.photoCard::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 18px;
+  pointer-events: none;
+}
+
+.photoCard img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 46%;
+}
+
+.photoCard figcaption {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  border-radius: 999px;
+  padding: 9px 13px;
+  background: rgba(255, 250, 242, 0.84);
+  color: var(--text);
+  font-weight: 900;
+  backdrop-filter: blur(10px);
+}
+
+.countdownSection,
+.invite,
+.where,
+.rsvp {
+  margin: 18px 0;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: clamp(22px, 5vw, 42px);
+  background: rgba(255, 250, 242, 0.72);
+  box-shadow: 0 12px 44px rgba(61, 48, 36, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.countdownSection {
+  display: grid;
+  gap: 20px;
+  background: linear-gradient(135deg, rgba(255, 250, 242, 0.9), rgba(230, 238, 240, 0.88));
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.timeBox {
+  min-height: 96px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.timeBox strong {
+  font-size: clamp(2.2rem, 10vw, 4rem);
+  line-height: 1;
+}
+
+.timeBox span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.eventGrid {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.eventCard {
+  display: grid;
+  gap: 18px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper-strong);
+}
+
+.eventCard p {
+  margin: 0 0 4px;
+  color: var(--accent);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.eventCard strong {
+  font-size: clamp(3rem, 14vw, 5.6rem);
+  line-height: 0.9;
+}
+
+address {
+  color: var(--muted);
+  font-style: normal;
+  line-height: 1.55;
+}
+
+.rsvp form {
+  display: grid;
+  gap: 20px;
+  margin-top: 22px;
+}
+
+.field,
+.choiceGroup {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.field span,
+legend {
+  color: var(--text);
+  font-weight: 900;
+}
+
+input,
+textarea {
+  width: 100%;
+  min-height: 50px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 13px 14px;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--text);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+.choice:focus-within,
+.primaryButton:focus-visible,
+.quietButton:focus-visible {
+  outline: 3px solid rgba(143, 91, 63, 0.26);
+  outline-offset: 3px;
+}
+
+.choices {
+  display: grid;
+  gap: 10px;
+}
+
+.choice {
+  position: relative;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 13px 14px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.choice input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.choice span {
+  font-weight: 850;
+}
+
+.choice.selected {
+  border-color: rgba(143, 91, 63, 0.62);
+  background: rgba(143, 91, 63, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(143, 91, 63, 0.42);
+}
+
+.conditional {
+  display: grid;
+  gap: 20px;
+  animation: softOpen 220ms ease both;
+}
+
+.compact {
+  max-width: 220px;
+}
+
+small,
+.formError {
+  color: #9d382b;
+  line-height: 1.45;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+}
+
+.submitButton {
+  width: 100%;
+}
+
+.result {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+  padding: 22px;
+  border-radius: 18px;
+  background: var(--paper-strong);
+  border: 1px solid var(--line);
+}
+
+.result strong {
+  font-size: 1.6rem;
+}
+
+.result p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+footer {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 34px 0 20px;
+  color: var(--muted);
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  color: var(--text);
+  font-weight: 900;
+}
+
+footer a {
+  font-weight: 900;
+}
+
+@media (min-width: 760px) {
+  main {
+    padding: 28px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr minmax(340px, 480px);
+    gap: 48px;
+  }
+
+  .heroActions {
+    grid-template-columns: repeat(2, max-content);
+  }
+
+  .countdownSection {
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+  }
+
+  .countdown {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .eventGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .choices {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 380px) {
+  main {
+    padding: 12px;
+  }
+
+  .countdownSection,
+  .invite,
+  .where,
+  .rsvp {
+    border-radius: 18px;
+  }
+
+  .timeBox strong {
+    font-size: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes softOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
