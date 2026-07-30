@@ -1,16 +1,255 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Свадебное приглашение Михаила и Людмилы" />
-    <meta property="og:title" content="Михаил и Людмила" />
-    <meta property="og:description" content="Мы решили пожениться. Да, добровольно." />
-    <meta property="og:image" content="/og.png" />
-    <title>Михаил и Людмила — приглашение</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#243846">
+  <meta name="description" content="Свадебное приглашение Миши и Милы — 08.08.2026">
+  <title>Миша и Мила — 08.08.2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Prata&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="hotfix.css">
+</head>
+<body>
+<div class="progress"><span></span></div>
+
+<header class="hero" id="top">
+  <div class="soft-shape shape-one"></div>
+  <div class="soft-shape shape-two"></div>
+  <div class="hero-ring ring-one" aria-hidden="true"></div>
+  <div class="hero-ring ring-two" aria-hidden="true"></div>
+  <div class="hero-dot dot-one" aria-hidden="true"></div>
+  <div class="hero-dot dot-two" aria-hidden="true"></div>
+
+  <nav>
+    <a class="logo" href="#top">М + М</a>
+    <a class="nav-button" href="#rsvp">Ответить</a>
+  </nav>
+
+  <div class="hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow reveal">Свадебное приглашение</p>
+      <h1 class="reveal"><span>Миша</span><em>и</em><span>Мила</span></h1>
+      <p class="date reveal">08.08.2026</p>
+      <p class="main-joke reveal">Мы решили пожениться. Да, добровольно.</p>
+      <p class="lead reveal">
+        Нам очень хочется провести этот день рядом с родными и близкими.
+        Будем по-настоящему рады, если вы разделите его вместе с нами.
+      </p>
+      <a class="button primary reveal" href="#rsvp">Я приду</a>
+    </div>
+
+    <figure class="hero-photo reveal">
+      <picture>
+        <source media="(max-width:700px)" srcset="assets/hero-mobile.webp">
+        <img src="assets/hero.webp" alt="Миша и Мила">
+      </picture>
+      <figcaption>Да, это мы</figcaption>
+    </figure>
+  </div>
+
+  <a class="scroll-hint" href="#main-start" aria-label="Прокрутить вниз"><span></span>Листайте</a>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>08.08.2026 · Миша и Мила · Будем очень рады вас видеть ·</span>
+      <span>08.08.2026 · Миша и Мила · Будем очень рады вас видеть ·</span>
+    </div>
+  </div>
+</header>
+
+<main id="main-start">
+<section class="section welcome reveal-scroll">
+  <div class="container welcome-grid">
+    <div class="welcome-title">
+      <p class="eyebrow">Мы создаём семью</p>
+      <h2>Решились на серьёзный шаг.<br>И хотим разделить его с вами.</h2>
+    </div>
+
+    <div class="copy family-copy">
+      <p>
+        Для нас 08.08.2026 — не просто красивая дата. В этот день мы станем семьёй и начнём новую общую главу.
+      </p>
+      <p>
+        Этот момент хочется разделить с самыми родными и близкими — с теми, кто знает нас настоящими, поддерживает и искренне радуется вместе с нами.
+      </p>
+      <p>
+        Поэтому ваше присутствие для нас действительно важно. Мы будем очень рады видеть вас рядом, вместе улыбаться, волноваться и запоминать этот день.
+      </p>
+      <p class="accent">
+        Всё будет тепло, спокойно и по-семейному. Странные конкурсы в программу по-прежнему не входят.
+      </p>
+    </div>
+  </div>
+
+  <div class="family-line" aria-hidden="true">
+    <span></span><i></i><span></span>
+  </div>
+</section>
+
+<section class="section photo-row reveal-scroll">
+  <figure class="photo-tile tall">
+    <picture><source media="(max-width:700px)" srcset="assets/waterfall-mobile.webp"><img src="assets/waterfall.webp" alt="Миша и Мила" loading="lazy"></picture>
+  </figure>
+  <div class="photo-note">
+    <p class="eyebrow">Просто мы</p>
+    <h2>Очень разные.<br>Но теперь официально вместе.</h2>
+    <p>Без длинных подписей и сложных историй. Просто несколько наших любимых кадров — потому что на них мы счастливые и настоящие.</p>
+  </div>
+  <figure class="photo-tile">
+    <picture><source media="(max-width:700px)" srcset="assets/coast-mobile.webp"><img src="assets/coast.webp" alt="Миша и Мила" loading="lazy"></picture>
+  </figure>
+</section>
+
+<section class="section countdown-section reveal-scroll">
+  <div class="container">
+    <p class="eyebrow light">До свадьбы осталось</p>
+    <div class="countdown">
+      <div><strong id="days">00</strong><span>дней</span></div>
+      <div><strong id="hours">00</strong><span>часов</span></div>
+      <div><strong id="minutes">00</strong><span>минут</span></div>
+      <div><strong id="seconds">00</strong><span>секунд</span></div>
+    </div>
+    <p id="countdownMessage" class="countdown-message"></p>
+  </div>
+</section>
+
+<section class="section events reveal-scroll">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">План сложностью в два пункта</p>
+      <h2>Где и во сколько</h2>
+    </div>
+
+    <div class="event-grid">
+      <article class="event blue">
+        <span class="number">01</span>
+        <p class="label">Роспись</p>
+        <p class="time">10:15</p>
+        <p class="event-joke">Ставим подписи и делаем вид, что совсем не волнуемся.</p>
+        <address>Республика Крым, Симферополь,<br>улица Миллера, 58А</address>
+        <a class="button light" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=Республика%20Крым%2C%20Симферополь%2C%20улица%20Миллера%2C%2058А">Посмотреть на карте</a>
+      </article>
+
+      <article class="event beige">
+        <span class="number">02</span>
+        <p class="label">Банкет</p>
+        <p class="time">13:00</p>
+        <p class="event-joke">Садимся за стол и наконец перестаём куда-то спешить.</p>
+        <address>Республика Крым, Симферополь,<br>улица Воровского, 24</address>
+        <a class="button dark" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=Республика%20Крым%2C%20Симферополь%2C%20улица%20Воровского%2C%2024">Посмотреть на карте</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section warm-photo reveal-scroll">
+  <div class="container warm-grid">
+    <figure>
+      <picture><source media="(max-width:700px)" srcset="assets/sea-mobile.webp"><img src="assets/sea.webp" alt="Миша и Мила" loading="lazy"></picture>
+    </figure>
+    <div>
+      <p class="eyebrow">Будем ждать вас</p>
+      <h2>Этот день станет лучше, если вы будете рядом</h2>
+      <p>
+        Мы собираем небольшую компанию, поэтому для нас важен каждый человек.
+        Нам хочется спокойно посидеть вместе, поговорить, посмеяться и запомнить этот день тёплым.
+      </p>
+      <p class="accent">
+        Никакой сложной программы. Просто хороший день с хорошими людьми.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section dress reveal-scroll">
+  <div class="container dress-grid">
+    <div>
+      <p class="eyebrow">Приходите красивыми</p>
+      <h2>Всё-таки свадьба</h2>
+      <p>
+        Строгого дресс-кода не будет. Выбирайте то, в чём вам комфортно и празднично.
+      </p>
+      <p class="accent">
+        Пастельные и спокойные оттенки приветствуются. Полностью траурный образ лучше оставить для менее радостного повода.
+      </p>
+    </div>
+    <div class="palette">
+      <i style="--tone:#d6c1bd"></i><i style="--tone:#b7c8d2"></i>
+      <i style="--tone:#b9c3b1"></i><i style="--tone:#c8bed3"></i>
+      <i style="--tone:#d4c4ae"></i><i style="--tone:#eee8df"></i>
+    </div>
+  </div>
+</section>
+
+<section class="section gifts reveal-scroll">
+  <div class="container gift-card">
+    <p class="eyebrow">Про подарки</p>
+    <h2>Главное — чтобы вы были рядом</h2>
+    <p>
+      Если захотите добавить к поздравлению что-то материальное, будем благодарны за подарок в компактном формате — так его будет проще сохранить и использовать на что-то действительно нужное.
+    </p>
+    <p class="accent">
+      В нашей дате сразу три восьмёрки. Говорят, восьмёрка приносит удачу и благополучие. Решили не спорить с хорошими знаками.
+    </p>
+  </div>
+</section>
+
+<section class="section rsvp" id="rsvp">
+  <div class="container rsvp-grid">
+    <div>
+      <p class="eyebrow light">Ответ до 03.08.2026</p>
+      <h2>Считать на вас стул?</h2>
+      <p>
+        Пожалуйста, сообщите, получится ли у вас прийти. Так нам будет проще всё подготовить и никого случайно не оставить без места.
+      </p>
+    </div>
+
+    <form id="rsvpForm" action="https://formsubmit.co/ajax/kam1dzu00@yandex.ru" method="POST">
+      <input class="honey-field" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label><span>Имя и фамилия</span><input name="name" required maxlength="100" placeholder="Например, Иван Иванов"></label>
+
+      <fieldset>
+        <legend>Получится ли прийти?</legend>
+        <div class="choices">
+          <label><input type="radio" name="attendance" value="Да, буду" required><b>Да, буду</b></label>
+          <label><input type="radio" name="attendance" value="К сожалению, не получится"><b>Не получится</b></label>
+        </div>
+      </fieldset>
+
+      <div id="details" class="details">
+        <fieldset>
+          <legend>Где вас ждать?</legend>
+          <div class="choices column">
+            <label><input type="radio" name="events" value="Роспись и банкет"><b>Роспись и банкет</b></label>
+            <label><input type="radio" name="events" value="Только роспись"><b>Только роспись</b></label>
+            <label><input type="radio" name="events" value="Только банкет"><b>Только банкет</b></label>
+          </div>
+        </fieldset>
+
+        <label><span>Сколько человек будет?</span>
+          <select name="count"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+        </label>
+      </div>
+
+      <label><span>Комментарий, если есть</span><textarea name="comment" rows="4" maxlength="500" placeholder="Напишите, если нам нужно что-то знать"></textarea></label>
+
+      <button class="button primary wide" type="submit">Отправить ответ</button>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p class="footer-names">Михаил и Людмила</p>
+  <p class="footer-date">До встречи 08.08.2026</p>
+  <p>Мы очень будем рады провести этот день вместе с вами.</p>
+  <a href="#top">Наверх ↑</a>
+</footer>
+
+<script type="module" src="script.js"></script>
+</body>
 </html>
