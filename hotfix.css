@@ -25,3 +25,64 @@
 .status.success {
   color: #2f6a4d;
 }
+
+.yandex-form-card {
+  overflow: hidden;
+  border-radius: 34px;
+  background: #f5f1ea;
+  box-shadow: 0 28px 75px rgba(0,0,0,.28);
+}
+
+.yandex-form-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  color: #243846;
+  background: #fffdfa;
+  border-bottom: 1px solid rgba(36,56,70,.1);
+}
+
+.yandex-form-head span {
+  font: 600 .78rem Unbounded, sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.yandex-form-head small {
+  color: #637983;
+  font-size: .78rem;
+}
+
+.yandex-form-card iframe {
+  display: block;
+  width: 100%;
+  min-height: 760px;
+  border: 0;
+  background: #fffdfa;
+}
+
+.rsvp-open-link {
+  margin-top: 20px;
+}
+
+@media (max-width: 850px) {
+  .yandex-form-card iframe {
+    min-height: 820px;
+  }
+}
+
+@media (max-width: 480px) {
+  .yandex-form-head {
+    padding: 15px 16px;
+  }
+
+  .yandex-form-card {
+    border-radius: 26px;
+  }
+
+  .yandex-form-card iframe {
+    min-height: 900px;
+  }
+}
