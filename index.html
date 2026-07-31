@@ -203,42 +203,29 @@
       <p class="eyebrow light">Ответ до 03.08.2026</p>
       <h2>Считать на вас стул?</h2>
       <p>
-        Пожалуйста, сообщите, получится ли у вас прийти. Так нам будет проще всё подготовить и никого случайно не оставить без места.
+        Пожалуйста, сообщите, получится ли у вас прийти. Ответ сохранится в нашей таблице Яндекс Форм, поэтому мы точно никого не потеряем.
       </p>
+      <a class="button light rsvp-open-link" href="https://forms.yandex.ru/u/6a6cda6590fa7b922bd9e711" target="_blank" rel="noopener">Открыть форму отдельно</a>
     </div>
 
-    <form id="rsvpForm" action="https://formsubmit.co/ajax/kam1dzu00@yandex.ru" method="POST">
-      <input class="honey-field" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <label><span>Имя и фамилия</span><input name="name" required maxlength="100" placeholder="Например, Иван Иванов"></label>
-
-      <fieldset>
-        <legend>Получится ли прийти?</legend>
-        <div class="choices">
-          <label><input type="radio" name="attendance" value="Да, буду" required><b>Да, буду</b></label>
-          <label><input type="radio" name="attendance" value="К сожалению, не получится"><b>Не получится</b></label>
-        </div>
-      </fieldset>
-
-      <div id="details" class="details">
-        <fieldset>
-          <legend>Где вас ждать?</legend>
-          <div class="choices column">
-            <label><input type="radio" name="events" value="Роспись и банкет"><b>Роспись и банкет</b></label>
-            <label><input type="radio" name="events" value="Только роспись"><b>Только роспись</b></label>
-            <label><input type="radio" name="events" value="Только банкет"><b>Только банкет</b></label>
-          </div>
-        </fieldset>
-
-        <label><span>Сколько человек будет?</span>
-          <select name="count"><option>1</option><option>2</option><option>3</option><option>4</option></select>
-        </label>
+    <div class="yandex-form-card">
+      <div class="yandex-form-head">
+        <span>Ответ гостя</span>
+        <small>Яндекс Формы</small>
       </div>
-
-      <label><span>Комментарий, если есть</span><textarea name="comment" rows="4" maxlength="500" placeholder="Напишите, если нам нужно что-то знать"></textarea></label>
-
-      <button class="button primary wide" type="submit">Отправить ответ</button>
-      <p id="status" class="status" role="status" aria-live="polite"></p>
-    </form>
+      <script src="https://forms.yandex.ru/_static/embed.js"></script>
+      <iframe
+        src="https://forms.yandex.ru/u/6a6cda6590fa7b922bd9e711?iframe=1"
+        frameborder="0"
+        name="ya-form-6a6cda6590fa7b922bd9e711"
+        title="Подтверждение присутствия на свадьбе Миши и Милы"
+        width="100%"
+        loading="lazy">
+      </iframe>
+      <noscript>
+        <a class="button primary wide" href="https://forms.yandex.ru/u/6a6cda6590fa7b922bd9e711" target="_blank" rel="noopener">Заполнить форму</a>
+      </noscript>
+    </div>
   </div>
 </section>
 </main>
