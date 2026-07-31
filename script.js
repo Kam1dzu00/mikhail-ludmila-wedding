@@ -24,60 +24,6 @@ const observer=new IntersectionObserver(entries=>{
 },{threshold:.12});
 document.querySelectorAll(".reveal-scroll").forEach(el=>observer.observe(el));
 
-const form=document.getElementById("rsvpForm"),details=document.getElementById("details"),status=document.getElementById("status");
-form.addEventListener("change",e=>{
-  if(e.target.name==="attendance"){
-    const yes=e.target.value==="Да, буду";
-    details.classList.toggle("show",yes);
-    details.querySelectorAll('input[name="events"]').forEach(i=>i.required=yes);
-  }
-});
-form.addEventListener("submit",async e=>{
-  e.preventDefault();
-  const button=form.querySelector('button[type="submit"]');
-  const data=new FormData(form);
-  const payload={
-    _subject:`Свадьба 08.08.2026 — ответ от ${data.get("name")||"гостя"}`,
-    _template:"table",
-    _url:"https://kam1dzu00.github.io/mikhail-ludmila-wedding/",
-    "Имя и фамилия":data.get("name")||"",
-    "Получится ли прийти":data.get("attendance")||"",
-    "Мероприятия":data.get("events")||"—",
-    "Количество гостей":data.get("count")||"—",
-    "Комментарий":data.get("comment")||"—",
-    _honey:data.get("_honey")||""
-  };
-
-  button.disabled=true;
-  button.textContent="Отправляем…";
-  status.className="status";
-  status.textContent="Сохраняем ваш ответ.";
-
-  try{
-    const response=await fetch(form.action,{
-      method:"POST",
-      headers:{"Content-Type":"application/json","Accept":"application/json"},
-      body:JSON.stringify(payload)
-    });
-    const result=await response.json().catch(()=>({}));
-    if(!response.ok||result.success===false) throw new Error(result.message||"Не удалось отправить ответ");
-
-    localStorage.setItem("wedding-rsvp",JSON.stringify({...payload,savedAt:new Date().toISOString()}));
-    status.className="status success";
-    status.textContent=data.get("attendance")==="Да, буду"
-      ?"Готово! Стул за вами закреплён."
-      :"Спасибо, что предупредили. Ответ отправлен.";
-    form.reset();
-    details.classList.remove("show");
-  }catch(error){
-    status.className="status error";
-    status.textContent="Не получилось отправить. Проверьте интернет и попробуйте ещё раз.";
-  }finally{
-    button.disabled=false;
-    button.textContent="Отправить ответ";
-  }
-});
-
 const hasFinePointer = matchMedia("(hover:hover) and (pointer:fine)").matches;
 const prefersReducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
